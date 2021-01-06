@@ -1,0 +1,73 @@
+body{
+  height:100%;
+  background-color:#202020;
+}
+.madlibs-screen{
+  margin:none;
+  height:100%;
+  text-align:center;
+  padding:20px;
+}
+.madlibs-logo{
+  height:200px;
+  width:90%;
+  text-align:center;
+  display:inline-block;
+  margin-bottom:20px;
+  margin-top:40px;
+}
+.category-icon{
+  height:120px;
+  width:90%;
+}
+.category{
+  margin:10px;
+  cursor:pointer;
+}
+.full-display-item{
+  display:inline-block;
+  text-align:center;
+}
+.madlib-card{
+  text-align:center;
+  display:inline-block;
+  margin:10px;
+}
+
+.bottom-text{
+  font-family:verdana;
+  color:#ffffff;
+  font-size:.8em;
+  line-height:.5em;
+  text-align:center;
+  display:inline-block;
+}
+.category-title{
+  font-family:verdana;
+  color:#ffffff;
+  font-weight:bold;
+  font-size:1.3em;
+}
+.title-specific{
+  font-family:verdana;
+  color:#ffffff;
+  font-size:1em;
+  font-weight:bold;
+}
+.Choice-Icon{
+  display:none;
+}
+.madlib-text{
+  height:40px;
+  width:80%;
+  max-width:400px;
+  background-color:white;
+  border-radius:12px;
+
+}
+.Completed-MadLib{
+  display:none;
+}
+.done-button{
+  display:none;
+}
