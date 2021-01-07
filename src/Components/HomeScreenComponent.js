@@ -18,8 +18,7 @@ class Home extends Component {
                         </Row>
                         <Row>
                             <NavLink to="/movies"><Col xs={4}><Button className="category-icon">Movies</Button></Col></ NavLink>
-                            <Col xs={4}><Button className="category-icon">Music</Button></Col>
-                            <Col xs={4}><Button className="category-icon">History</Button></Col>
+                            <NavLink to="/music"><Col xs={4}><Button className="category-icon">Music</Button></Col></ NavLink>
                         </Row>
                     </Container>
                 </div>

@@ -1,4 +1,4 @@
-export const Comedy = [
+export const Drama = [
     {
         id: 0,
         title: 'GoodWill Hunting',
@@ -68,67 +68,66 @@ export const Comedy = [
     },
     {
         id: 1,
-        title: 'Wedding Crashers',
-        subhead: 'scene at the table',
-        actor: 'Vince Vaughn',
+        title: 'ShawShank Redemption',
+        subhead: 'Speech During Outro',
+        actor: 'Morgan Freeman',
         image: '/assets/images/bars.png',
         movie: "/Wedding",
-        speech: ['Mythical Creature', 'Verb', 'Objects Plural', 'adverb','Famous Person', 'Occupation Plural','Condiment','Article of Clothing',
-        'Animal','Mental State','Name','Adjective describing Person','Name','Small Animal','Small Object','VideoGame','TV Character','Adjective',
-        'Emotion','Occupation', 'Disease', 
+        speech: ['Household Task (ing)', 'Adjective','Crime','Object Plural', 'Noun (Name Calling)','Emotion','Verb(Mundane Task)',
+        'Verb(Recreational Activity)', 'Adjective', 'TV Series',' City or State', 'Reality TV Star', 'Body of Water', 'Adjective',
+
     ],
         words: [],
         currentWord: [],
-        complete: ['She\'s good. I mean, I believed that she was a ', ' and it hurts to ', 'But I, you know, was looking to take',
-        ', so could I really feel that bad?  It\'s not like I was', 'You know what I\'m saying? So fair play. And let\'s be ',
-        ', okay? Let\'s put all the','on the table. She\'s fit for a',', this','three ways towards the weekend, and you want to know what? I dig it!',
-        'Because you want to know what the kicker is, ','Maybe I\'m a little','That\'s right, maybe ',' is a little nuts! And there\'s something about me that I\'m a little ',
-        '. I know it\'s a surprise. I know it\'s not on the surface. Man, I had a little ',' when I was a kid. His name was ','Famous Person',
-        '. We used to play ','everyday and bless his heart, ','would always let me win. And that ain\'t ','! There\'s something odd in that, but maybe that\'s what it takes to make you feel',
-        '. I don\'t know! But I know when that ', ' starts getting kooky, there\'s something about me that feels ', ' inside.'
+        complete: ['Get busy livin\' or get busy','. That\'s ','For the second time in my life, I am guilty of ','Of course, I doubt they\'ll toss up any ',
+        ' for that. Not for an old ',' like me... I find I\'m so ',' I can barely ',' or ', '  I think it\'s the excitement only a ',
+        'man can feel, a free man at the start of ',' whose conclusion is uncertain. I hope I can make it across  ', '  I hope to see ',
+        ' shake his hand. I hope the ','  is as ', ' as it has been in my dreams. I hope.'
         ]
     },
     {
         id: 2,
-        title: 'Talladega Nights',
-        subhead: 'scene at restaurant',
-        actor: 'Amy Adams',
+        title: 'Requiem for a Dream ',
+        subhead: 'Red Dress Monologue',
+        actor: 'Ellen Burstyn ',
         image: '/assets/images/bars.png',
         movie: "/Talladega",
-        speech: ['Verb', 'Name', 'Noun (NameCalling)', 'Verb (ing)', 'Celebrity', 'Noun', 'Verb','Verb', 'Food or Beverage', 'Verb', 'Country', 'Country',
-        'Politician' , "Desert", 'Verb', "Number", "Fantasy Animal", "State", "Name", "Celebrity", "Food" 
-        
-    ],
+        speech: ['Method of Transportation', 'Body Part','Noun (Name Calling)','TV Show', 'Verb','Famous Actor',
+        'Object Plural','Body Part (Plural)','Musical Instrument', 'TV Host','Verb (Recreational Activity)','Name',
+        'Adjective', 'Adjective'
+        ],
         words: [],
         currentWord: [],
-        complete: ['Do you want to know, why I think you should ', ', ', '? It\'s because it\'s what you love, ',
-        ' It is who you were born to be. And here you sit, ', '. Well, ', ' is not a thinker.  He is a ' , 
-        '. nd that\'s what you need to do. You don\'t need to ', '. You need to ', '. You need ','. You need to go out there, and you need to ',
-        ' You need to grab a hold of that line between ', " and ", ", and you need to wrestle " , 'to the ground like a demon cobra! And then, when ',
-        ' rises up in your belly, you ', '. And you know that fear is powerful, because it has been there for ', 'years. And it is good. And you use it. And you ride it; you ride it like a ',
-        'through the gates of ', ', and then you win, ' , '. You WIN! And you don\'t win for anybody else. You win for ', ', you know why? Because a man takes','. He takes it all. And you\'re a man, aren\'t you? Aren\'t you? '
+        complete: [ ' Big deal? You drove up in a ', '. Did you see who had the best ','I\'m somebody now, ','. Everybody likes',
+        'Soon, ',' people will see me and they\'ll all ',' I\'ll tell them about you, ',', how good he was to us. Remember? It\'s a reason to get',
+        ' in the morning. It\'s a reason to lose ','. To fit in a ',' why should I? I\'m alone. ', '\'s gone. ','. You\'re gone. I\'ve no one to...',
+        ' for. What have I got, ','? ......I\'m ', '. I\'m ','.'
 
     ]
     },
     {
         id: 3,
-        title: 'Mean Girls',
+        title: 'Rocky Balboa',
         subhead: 'scene at the party',
-        actor: 'Lizzy Caplan',
+        actor: 'Sylvester Stallone',
         image: '/assets/images/bars.png',
         movie: "/Annie",
-        speech: ['Famous Event', 'Adjective', 'Noun', 'Emotion', 'Beverage (Plural)', 'Band', 'Liquid', 'Politician', 'Emotion',
-        'City or Town', 'Animal (Plural)', 'Animal (Plural)', 'Occupation (Plural)', 'Type of Food', 'Famous Author', 'Famous Actress',
-        'Type of Cuisine', 'Name', "Noun (Name Calling)"
+        speech: ['Authority Figure(Generic)', 'Occupation', 'Famous Performer','Adjective', 'TV Show','Famous Athlete','Verb (Past Tense)',
+        'Emotion', 'Body Part','Famous Politician','Large Animal','Popular Saying', 'Nice Thing (Plural)', 'Nice Thing (Plural)', 'Adjective',
+        'Body Part (Plural)', 'Olde Time Actor','Verb (Recreational Activity)', ' Verb (Recreational Activity)','Type of Quisine','Object (Plural)',
+        'Celebrity', 'Politician', 'Fantasy Animal (Plural)', 'TV Show', 'Type of Relationship','Famous Organization','Famous Rapper'
     ],
         words: [],
         currentWord: [],
-        complete: ['Explain what?? How you forgot to invite us to ', '> Buddy, you\'re not pretending any more. You\'re ', 
-        'Cold, shiny, hard ', '. Did you have a ', ' time? Did you drink awesome ', ' and listen to ', ' and soak up each other\'s ',
-        'God, ya know, at least me and ', ' know we\'re mean! You try to act like you\'re so ', ' like "Oh. I used to live in ',
-        ' and play with all the little ', ' and all the little ', 'That is the thing with you ','! You think that everybody is in love with you when actually everybody hates ',
-        ' like ... ', ' for example. He broke up with ', ' and he still doesn\'t want you. So why are you still messing with ', '? I\'ll tell you why! Cause you are a mean girl, ',
-        '. You\'re a ','!'
+        complete: ['You used to fit right here. I’d hold you up to say to your', ' This kid’s going to be the best ', ' in the world. This kid’s going to be somebody better than ',
+        '. And you grew up good and ',', it was great just watching ','everyday, it was like a privilege. Til the time come for you to be your own man and take on ',
+        ' and you did. But somewhere along the line you ','. You stopped being ','. You let people stick a ',' in your face and tell you you’re no good; and when things got hard you started looking for ',
+        ' to blame, like a big ','. Let me tell you something you already know. ','The world ain’t all ',' and ','.  It’s a very mean and nasty place and I don’t care how ',
+        ' you are it will beat you to your ', '  and keep you there permanently if you let it. You, me or nobody is gonna hit as hard as ',
+        '. But it ain’t about how hard you hit. It’s about how hard you can ', 'and keep moving forward; how much you can ',' and keep moving forward. That’s how winning is done! Now if you know what you’re worth then go out and get ',
+        '. But you gotta be willing to take ', ', and not pointing fingers sayin’ you ain’t what you wanna be because of ',' or ', 'Or anybody!',
+        's do that and that ain’t you! You’re better than that! I’m always going to love ', 'no matter what. No matter what happens. You’re my ',
+        'and you’re my blood. You’re the best thing in ',' But until you start believing in ','you ain’t gonna have a life.'
     ]
     }
 ];

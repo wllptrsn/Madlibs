@@ -1,44 +1,44 @@
 import React, { Component } from 'react';
 import { Container, Card, Col, Row, CardImg, CardImgOverlay, CardTitle, Button } from 'reactstrap';
-import { Comedy } from '../shared/ComedyTitles';
-import {Drama} from '../shared/DramaTitles'
+import { Rap } from '../shared/RapTitles';
+import {Rock} from '../shared/RockTitles'
 //Go to the Single Page Application in the React Course
-class Films extends Component {
+class Music extends Component {
     constructor(props) {
         super(props);
-        this.showFilmCom = this.showFilmCom.bind(this);
-        this.showFilmDrama = this.showFilmDrama.bind(this);
+        this.showSongRap = this.showSongRap.bind(this);
+        this.showSongRock = this.showSongRock.bind(this);
         this.enterLetters = this.enterLetters.bind(this);
         this.nextBtn = this.nextBtn.bind(this);
         this.backBtn = this.backBtn.bind(this);
         this.prevBtn = this.prevBtn.bind(this);
         this.doneBtn = this.doneBtn.bind(this);
         this.state = {
-            currentFilm: 0,
+            currentSong: 0,
             currentPrompt: 0,
             disabled: true,
             nextDisabled: true,
             prevDisabled: true,
-            comedy: Comedy,
-            drama: Drama,
-            genre: Comedy
+            rap: Rap,
+            rock: Rock,
+            genre: Rap
         };
     }
 
-    showFilmCom(x) {
+    showSongRap(x) {
         document.querySelector('.filmScreenDisplay').style.display = "none";
         document.querySelector('.Choice-Icon').style.display = "inline-block";
         this.setState({
-            currentFilm: x,
-            genre:Comedy
+            currentSong: x,
+            genre:Rap
         });
     }
-    showFilmDrama(x) {
+    showSongRock(x) {
         document.querySelector('.filmScreenDisplay').style.display = "none";
         document.querySelector('.Choice-Icon').style.display = "inline-block";
         this.setState({
-            currentFilm: x,
-            genre:Drama
+            currentSong: x,
+            genre:Rock
         });
     }
 
@@ -46,10 +46,10 @@ class Films extends Component {
     enterLetters(x) {
         var madlibsText = document.querySelector('.madlib-text');
 
-        this.state.genre[this.state.currentFilm].currentWord.push(x);
-        madlibsText.innerHTML = this.state.genre[this.state.currentFilm].currentWord.join('');
+        this.state.genre[this.state.currentSong].currentWord.push(x);
+        madlibsText.innerHTML = this.state.genre[this.state.currentSong].currentWord.join('');
 
-        if (this.state.genre[this.state.currentFilm].currentWord.length >= 1) {
+        if (this.state.genre[this.state.currentSong].currentWord.length >= 1) {
             this.setState({
                 nextDisabled: false
             })
@@ -61,32 +61,32 @@ class Films extends Component {
             currentPrompt: this.state.currentPrompt - 1,
             
         })
-        this.state.genre[this.state.currentFilm].currentWord.length = 0;
-        this.state.genre[this.state.currentFilm].words.pop();
-        if (this.state.genre[this.state.currentFilm].words.length <= 1) {
+        this.state.genre[this.state.currentSong].currentWord.length = 0;
+        this.state.genre[this.state.currentSong].words.pop();
+        if (this.state.genre[this.state.currentSong].words.length <= 1) {
             this.setState({
                 prevDisabled: true
             })
         }
     }
     backBtn() {
-        this.state.genre[this.state.currentFilm].currentWord.pop();
-        document.querySelector('.madlib-text').innerHTML = this.state.genre[this.state.currentFilm].currentWord.join('');
+        this.state.genre[this.state.currentSong].currentWord.pop();
+        document.querySelector('.madlib-text').innerHTML = this.state.genre[this.state.currentSong].currentWord.join('');
     }
     nextBtn() {
         this.setState({
             nextDisabled: true,
             prevDisabled: false
         })
-        this.state.genre[this.state.currentFilm].words.push(this.state.genre[this.state.currentFilm].currentWord.join(''));
+        this.state.genre[this.state.currentSong].words.push(this.state.genre[this.state.currentSong].currentWord.join(''));
 
 
-        if (this.state.currentPrompt < this.state.genre[this.state.currentFilm].speech.length - 1) {
+        if (this.state.currentPrompt < this.state.genre[this.state.currentSong].speech.length - 1) {
             this.setState({
                 currentPrompt: this.state.currentPrompt + 1
             })
 
-            this.state.genre[this.state.currentFilm].currentWord.length = 0;
+            this.state.genre[this.state.currentSong].currentWord.length = 0;
             document.querySelector('.madlib-text').innerHTML = '';
 
         }
@@ -96,51 +96,51 @@ class Films extends Component {
             })
             document.querySelector('.next-button').style.display = "none";
             document.querySelector('.done-button').style.display = "inline";
-            alert(this.state.genre[this.state.currentFilm].words.join(''));
+            alert(this.state.genre[this.state.currentSong].words.join(''));
         }
     }
     doneBtn() {
-        var complete =this.state.genre[this.state.currentFilm].complete;
+        var complete =this.state.genre[this.state.currentSong].complete;
         document.querySelector('.Choice-Icon').style.display = "none";
         document.querySelector('.Completed-MadLib').style.display = "inline-block";
-        for (var i = 0; i < this.state.genre[this.state.currentFilm].words.length; i++) {
+        for (var i = 0; i < this.state.genre[this.state.currentSong].words.length; i++) {
 
-            document.querySelector('.completed-text').append(complete[i] + ' ' + this.state.genre[this.state.currentFilm].words[i] + ' ');
+            document.querySelector('.completed-text').append(complete[i] + ' ' + this.state.genre[this.state.currentSong].words[i] + ' ');
         }
         document.querySelector('.completed-text').append(complete[(complete.length - 1)]);
     }
 
     render() {
-        const showComedy = this.state.comedy.map(film => {
+        const showRap = this.state.rap.map(song => {
             return (
                 <Col xs={6} sm={6} md={3} className="full-display-item">
 
-                    <Card className="madlib-card" onClick={() => this.showFilmCom(film.id)}>
-                        <CardImg width="10%" src={film.image} alt={film.title} />
+                    <Card className="madlib-card" onClick={() => this.showSongRap(song.id)}>
+                        <CardImg width="10%" src={song.image} alt={song.title} />
                         <CardImgOverlay>
-                            <CardTitle className="title-specific">{film.title}</CardTitle>
+                            <CardTitle className="title-specific">{song.title}</CardTitle>
                         </CardImgOverlay>
                     </Card>
                     <div className="bottom-text">
-                        <p>{film.subhead}</p>
-                        <p>{film.actor}</p>
+                        <p>{song.subhead}</p>
+                        <p>{song.actor}</p>
                     </div>
                 </Col>
             );
         });
-        const showDrama = this.state.drama.map(film => {
+        const showRock = this.state.rock.map(song => {
             return (
                 <Col xs={6} sm={6} md={3} className="full-display-item">
 
-                    <Card className="madlib-card" onClick={() => this.showFilmDrama(film.id)}>
-                        <CardImg width="10%" src={film.image} alt={film.title} />
+                    <Card className="madlib-card" onClick={() => this.showSongRock(song.id)}>
+                        <CardImg width="10%" src={song.image} alt={song.title} />
                         <CardImgOverlay>
-                            <CardTitle className="title-specific">{film.title}</CardTitle>
+                            <CardTitle className="title-specific">{song.title}</CardTitle>
                         </CardImgOverlay>
                     </Card>
                     <div className="bottom-text">
-                        <p>{film.subhead}</p>
-                        <p>{film.actor}</p>
+                        <p>{song.subhead}</p>
+                        <p>{song.actor}</p>
                     </div>
                 </Col>
             );
@@ -149,22 +149,22 @@ class Films extends Component {
             <React.Fragment>
                 <Container className="filmScreenDisplay">
                     <Row>
-                        <Col xs={12} ><h3 className="category-title">Comedy</h3></Col>
+                        <Col xs={12} ><h3 className="category-title">Rap</h3></Col>
                     </Row>
                     <Row>
-                        {showComedy}
+                        {showRap}
                     </Row>
                     <Row>
-                        <Col xs={12} ><h3 className="category-title">Drama</h3></Col>
+                        <Col xs={12} ><h3 className="category-title">Rock</h3></Col>
                     </Row>
                     <Row>
-                        {showDrama}
+                        {showRock}
                     </Row>
                 </Container>
                 <Container className="Choice-Icon">
                     <Row>
                         <Col>
-                            <h2>{this.state.genre[this.state.currentFilm].speech[this.state.currentPrompt]}</h2>
+                            <h2>{this.state.genre[this.state.currentSong].speech[this.state.currentPrompt]}</h2>
                             <div className="madlib-text"><h3> </h3></div>
                         </Col>
                     </Row>
@@ -218,4 +218,4 @@ class Films extends Component {
 }
 
 
-export default Films;
+export default Music;
