@@ -1,80 +1,71 @@
 export const Rock = [
     {
         id: 0,
-        title: 'GoodWill Hunting',
-        subhead: 'scene in garden',
-        actor: 'Robin Williams',
+        title: 'Creep',
+        subhead: 'RadioHead',
+        actor: 'Pablo Honey',
         image: "/assets/images/goodwill.png",
         movie: "/GoodWill",
-        speech: ['Noun'
+        speech: ['Disease', 'Wild Animal','Adjective', 'State of Being','Slang Adjective','Famous Actor',
+        'House in Hogwartz', 'type of fruit', 'Building'
         ],
         words: [],
         currentWord: [],
-        complete: ["You know what occured to me? You're just a "
+        complete: ["I don't care if it hurts. I wanna have ", ' want a perfect ',' I want a ', ' soul. I want you to notice When I\'m ',
+        ' special. I wish I was ',' But I\'m a creep. I\'m a ', '. What the ','  am I doin\' here? I don\'t belong here. She\'s running out the '
     ]
     },
     {
         id: 1,
-        title: 'ShawShank Redemption',
-        subhead: 'Speech During Outro',
-        actor: 'Morgan Freeman',
+        title: 'Self Esteem',
+        subhead: 'The Offspring',
+        actor: 'Smash',
         image: '/assets/images/bars.png',
         movie: "/Wedding",
-        speech: ['Household Task (ing)', 'Adjective','Crime','Object Plural', 'Noun (Name Calling)','Emotion','Verb(Mundane Task)',
-        'Verb(Recreational Activity)', 'Adjective', 'TV Series',' City or State', 'Reality TV Star', 'Body of Water', 'Adjective',
+        speech: ['Famous Book', 'Sport, Hobby or Recreational Activity','Object (Accessory)',
+        'Type of Dish', 'Adjective Describing Somebody','TV Show','Toy', 'Article of Clothing',
+
 
     ],
         words: [],
         currentWord: [],
-        complete: ['Get busy livin\' or get busy','. That\'s ','For the second time in my life, I am guilty of ','Of course, I doubt they\'ll toss up any ',
-        ' for that. Not for an old ',' like me... I find I\'m so ',' I can barely ',' or ', '  I think it\'s the excitement only a ',
-        'man can feel, a free man at the start of ',' whose conclusion is uncertain. I hope I can make it across  ', '  I hope to see ',
-        ' shake his hand. I hope the ','  is as ', ' as it has been in my dreams. I hope.'
+        complete: ['I wrote her', 'for the tenth time today. And practiced','But she came over I lost my ', 'I took her back and made her ',
+        '. Now I know I\'m being ', '. That\'s okay man \'cause I like ', 'Now I know she\'s playing with ','That\'s okay \'cause I\'ve got no ',
+        'Oh yeah, yeah oh yeah, yeah Oh yeah, yeah oh yeah, yeah'
         ]
     },
     {
         id: 2,
-        title: 'Requiem for a Dream ',
-        subhead: 'Red Dress Monologue',
-        actor: 'Ellen Burstyn ',
+        title: 'Under the Bridge',
+        subhead: 'Red Hot Chili Peppers',
+        actor: 'Blood Sugar Sex Magik',
         image: '/assets/images/bars.png',
         movie: "/Talladega",
-        speech: ['Method of Transportation', 'Body Part','Noun (Name Calling)','TV Show', 'Verb','Famous Actor',
-        'Object Plural','Body Part (Plural)','Musical Instrument', 'TV Host','Verb (Recreational Activity)','Name',
-        'Adjective', 'Adjective'
+        speech: ['Body Part', ' City or Town','Emotion','Verb(Recreational Activity)', 'Piece of Furniture','Relationship',
+        'Body Part', 'Article of Clothing or Accesory', 'Famous News Anchor','Verb (Hobby or Recreational Activity)','Washed Up Celebrity',
+        'Building', 'Period of Time'
         ],
         words: [],
         currentWord: [],
-        complete: [ ' Big deal? You drove up in a ', '. Did you see who had the best ','I\'m somebody now, ','. Everybody likes',
-        'Soon, ',' people will see me and they\'ll all ',' I\'ll tell them about you, ',', how good he was to us. Remember? It\'s a reason to get',
-        ' in the morning. It\'s a reason to lose ','. To fit in a ',' why should I? I\'m alone. ', '\'s gone. ','. You\'re gone. I\'ve no one to...',
-        ' for. What have I got, ','? ......I\'m ', '. I\'m ','.'
-
+        complete: [ 'Sometimes I feel like I don\'t have a partner','Sometimes I feel like my only friend. Is the city I live in. The city of','.',
+        ' as I am, together we ','. I drive on her ','\'cause she\'s my ','I walk through her ',' \'Cause she knows who I am. She sees my ',
+        'And she kisses ','I never ','. Now that is a lie. ','I don\'t ever wanna feel Like ','But take me to the ',' I love Take me all the way. I don\'t ever wanna feel Like I did that ',
+        'But take me to the place I love. Take me all the way'
     ]
     },
     {
         id: 3,
-        title: 'Rocky Balboa',
-        subhead: 'scene at the party',
-        actor: 'Sylvester Stallone',
+        title: 'My Hero',
+        subhead: 'Foo Fighters',
+        actor: 'The Colour and the Shape',
         image: '/assets/images/bars.png',
         movie: "/Annie",
-        speech: ['Authority Figure(Generic)', 'Occupation', 'Famous Performer','Adjective', 'TV Show','Famous Athlete','Verb (Past Tense)',
-        'Emotion', 'Body Part','Famous Politician','Large Animal','Popular Saying', 'Nice Thing (Plural)', 'Nice Thing (Plural)', 'Adjective',
-        'Body Part (Plural)', 'Olde Time Actor','Verb (Recreational Activity)', ' Verb (Recreational Activity)','Type of Quisine','Object (Plural)',
-        'Celebrity', 'Politician', 'Fantasy Animal (Plural)', 'TV Show', 'Type of Relationship','Famous Organization','Famous Rapper'
+        speech: ['Emotion (Feeling or State of Being)','Family Heirloom (Plural)', 'Type of Desert','Type of Fluid', 'Famous Actor'
     ],
         words: [],
         currentWord: [],
-        complete: ['You used to fit right here. I’d hold you up to say to your', ' This kid’s going to be the best ', ' in the world. This kid’s going to be somebody better than ',
-        '. And you grew up good and ',', it was great just watching ','everyday, it was like a privilege. Til the time come for you to be your own man and take on ',
-        ' and you did. But somewhere along the line you ','. You stopped being ','. You let people stick a ',' in your face and tell you you’re no good; and when things got hard you started looking for ',
-        ' to blame, like a big ','. Let me tell you something you already know. ','The world ain’t all ',' and ','.  It’s a very mean and nasty place and I don’t care how ',
-        ' you are it will beat you to your ', '  and keep you there permanently if you let it. You, me or nobody is gonna hit as hard as ',
-        '. But it ain’t about how hard you hit. It’s about how hard you can ', 'and keep moving forward; how much you can ',' and keep moving forward. That’s how winning is done! Now if you know what you’re worth then go out and get ',
-        '. But you gotta be willing to take ', ', and not pointing fingers sayin’ you ain’t what you wanna be because of ',' or ', 'Or anybody!',
-        's do that and that ain’t you! You’re better than that! I’m always going to love ', 'no matter what. No matter what happens. You’re my ',
-        'and you’re my blood. You’re the best thing in ',' But until you start believing in ','you ain’t gonna have a life.'
+        complete: ['Too ', ' to talk about. Take your ', '  down and shake it out. ','  or consequence, say it aloud. Use that ',
+        ', race it around. There goes ','. Watch him as he goes!'
     ]
     }
 ];

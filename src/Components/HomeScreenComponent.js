@@ -14,7 +14,7 @@ class Home extends Component {
                             <Col sm={4} md={3}><Button>Back to Site</Button></Col>
                         </Row>
                         <Row>
-                            <Col sm={12}><div className="madlibs-logo">MadLibs</div></Col>
+                            <Col sm={12}><div className="madlibs-logo">ODDLIBS</div></Col>
                         </Row>
                         <Row>
                             <NavLink to="/movies"><Col xs={4}><Button className="category-icon">Movies</Button></Col></ NavLink>
