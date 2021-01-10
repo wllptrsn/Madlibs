@@ -1,6 +1,11 @@
+html{
+  display:inline-block;
+  text-align:center;
+}
 body{
   height:100%;
-  background-color:#202020;
+  background-color:#431A53;
+  text-align:center;
 }
 .madlibs-screen{
   margin:none;
@@ -9,17 +14,34 @@ body{
   padding:20px;
 }
 .madlibs-logo{
-  height:200px;
+  font-family: 'Luckiest Guy', cursive;
   width:90%;
+  font-weight:bold;
+  font-size:5em;
   text-align:center;
   display:inline-block;
   margin-bottom:20px;
   margin-top:40px;
+  color:#CF636C;
+  letter-spacing:10px;
+  text-shadow: 7px 7px 4px  #000000;
 }
 .category-icon{
-  height:120px;
-  width:90%;
+  height:50px;
+  width:100px;
+  font-weight:bold;
+  font-size:20px;
+  text-align:center;
+  margin:10px;
+  background-color:#CF636C;
+  border-radius:10px;
+  box-shadow: 10px 10px 5px  #000000;
 }
+.category-icon:hover{
+  background-color:#A7333D;
+  box-shadow: 5px 5px 1px  #000000;
+}
+
 .category{
   margin:10px;
   cursor:pointer;
@@ -28,11 +50,45 @@ body{
   display:inline-block;
   text-align:center;
 }
+.filmScreenDisplay{
+  
+  text-align:center;
+}
 .madlib-card{
   text-align:center;
   display:inline-block;
   margin:10px;
 }
+.keyboard button{
+  width:42px;
+  border-radius:none;
+  background-color:#E7B1B5;
+  text-shadow: 1px 1px 1px  #000000;
+}
+.keyboard button:hover{
+  background-color:#CF636C;
+
+}
+.keyboard button:focus{
+  background-color:#B83943;
+}
+
+.space-bar{
+  width:200px;
+  height:42px;
+  
+  }
+  .bottom-buttons button{
+    background-color:#E7B1B5;
+    text-shadow: 1px 1px 1px  #000000;
+  }
+  .bottom-buttons button:hover{
+    background-color:#CF636C;
+
+  }
+  .bottom-buttons button:disabled{
+    background-color:#CF636C;
+  }
 
 .bottom-text{
   font-family:verdana;
@@ -56,13 +112,20 @@ body{
 }
 .Choice-Icon{
   display:none;
+  text-align:center;
+  width:100%;
+  padding-top:20px;
 }
 .madlib-text{
   height:40px;
-  width:80%;
-  max-width:400px;
+  width:400px;
   background-color:white;
   border-radius:12px;
+  text-align:center;
+  display:inline-block;
+  font-weight:bold;
+  font-size:20px;
+  margin-bottom:20px;
 
 }
 .Completed-MadLib{
@@ -70,4 +133,26 @@ body{
 }
 .done-button{
   display:none;
+}
+
+
+.prompt-text{
+  color:#CF636C;
+  font-family: 'Fredoka One', cursive;
+  text-shadow: 3px 3px 3px  #000000;
+}
+.Completed-MadLib{
+  padding-top:20px;
+}
+.final-box{
+  background-color:#ffffff;
+  width:400px;
+  font-size:1.7em;
+  border: 2px solid #CF636C;
+  border-radius:10px;
+  font-family:arial, sans-serif;
+  font-weight:bold;
+  text-align:center;
+  display:inline-block;
+  padding:12px;
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Card, Col, Row, CardImg, CardImgOverlay, CardTitle, Button } from 'reactstrap';
 import { Rap } from '../shared/RapTitles';
-import {Rock} from '../shared/RockTitles'
+import { Rock } from '../shared/RockTitles'
 //Go to the Single Page Application in the React Course
 class Music extends Component {
     constructor(props) {
@@ -30,7 +30,7 @@ class Music extends Component {
         document.querySelector('.Choice-Icon').style.display = "inline-block";
         this.setState({
             currentSong: x,
-            genre:Rap
+            genre: Rap
         });
     }
     showSongRock(x) {
@@ -38,7 +38,7 @@ class Music extends Component {
         document.querySelector('.Choice-Icon').style.display = "inline-block";
         this.setState({
             currentSong: x,
-            genre:Rock
+            genre: Rock
         });
     }
 
@@ -59,7 +59,7 @@ class Music extends Component {
         this.setState({
             nextDisabled: true,
             currentPrompt: this.state.currentPrompt - 1,
-            
+
         })
         this.state.genre[this.state.currentSong].currentWord.length = 0;
         this.state.genre[this.state.currentSong].words.pop();
@@ -100,12 +100,12 @@ class Music extends Component {
         }
     }
     doneBtn() {
-        var complete =this.state.genre[this.state.currentSong].complete;
+        var complete = this.state.genre[this.state.currentSong].complete;
         document.querySelector('.Choice-Icon').style.display = "none";
         document.querySelector('.Completed-MadLib').style.display = "inline-block";
         for (var i = 0; i < this.state.genre[this.state.currentSong].words.length; i++) {
 
-            document.querySelector('.completed-text').append(complete[i] + ' ' + this.state.genre[this.state.currentSong].words[i] + ' ');
+            document.querySelector('.completed-text').append(complete[i] + ' ' + this.state.genre[this.state.currentSong].words[i] + '');
         }
         document.querySelector('.completed-text').append(complete[(complete.length - 1)]);
     }
@@ -164,52 +164,62 @@ class Music extends Component {
                 <Container className="Choice-Icon">
                     <Row>
                         <Col>
-                            <h2>{this.state.genre[this.state.currentSong].speech[this.state.currentPrompt]}</h2>
-                            <div className="madlib-text"><h3> </h3></div>
+                            <h2 className="prompt-text">{this.state.genre[this.state.currentSong].speech[this.state.currentPrompt]}</h2>
+                            <div className="madlib-text"></div>
                         </Col>
                     </Row>
                     <Row>
-                        <div class="keyboard">
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('Q') }}>Q</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('W') }}>W</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('E') }}>E</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('R') }}>R</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('T') }}>T</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('Y') }}>Y</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('U') }}>U</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('I') }}>I</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('O') }}>O</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('P') }}>P</Button><br></br>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('A') }}>A</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('S') }}>S</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('D') }}>D</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('F') }}>F</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('G') }}>G</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('H') }}>H</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('J') }}>J</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('K') }}>K</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('L') }}>L</Button><br></br>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('Z') }}>Z</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('X') }}>X</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('C') }}>C</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('V') }}>V</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('B') }}>B</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('N') }}>N</Button>
-                            <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('M') }}>M</Button><br></br>
-                            <Button disabled={this.state.nextDisabled} onClick={() => { this.enterLetters(' ') }}></Button>
-                        </div>
+                        <Col>
+                            <div class="keyboard">
+
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('Q') }}>Q</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('W') }}>W</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('E') }}>E</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('R') }}>R</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('T') }}>T</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('Y') }}>Y</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('U') }}>U</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('I') }}>I</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('O') }}>O</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('P') }}>P</Button><br></br>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('A') }}>A</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('S') }}>S</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('D') }}>D</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('F') }}>F</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('G') }}>G</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('H') }}>H</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('J') }}>J</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('K') }}>K</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('L') }}>L</Button><br></br>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('Z') }}>Z</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('X') }}>X</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('C') }}>C</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('V') }}>V</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('B') }}>B</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('N') }}>N</Button>
+                                <Button disabled={!this.state.disabled} onClick={() => { this.enterLetters('M') }}>M</Button><br></br>
+                            </div>
+                        </Col>
                     </Row>
                     <Row>
-                        <Button disabled={this.state.prevDisabled} onClick={this.prevBtn} >Prev</Button>
-                        <Button disabled={this.state.nextDisabled} onClick={this.backBtn} >Back</Button>
-                        <Button className="next-button" disabled={this.state.nextDisabled} onClick={this.nextBtn} >Next</Button>
-                        <Button className="done-button" onClick={this.doneBtn}>Done</Button>
+                        <Col className="bottom-buttons">
+                            <Button className="space-bar" disabled={this.state.nextDisabled} onClick={() => { this.enterLetters(' ') }}></Button><br></br>
+                            <Button disabled={this.state.prevDisabled} onClick={this.prevBtn} >Prev</Button>
+                            <Button disabled={this.state.nextDisabled} onClick={this.backBtn} >Back</Button>
+                            <Button className="next-button" disabled={this.state.nextDisabled} onClick={this.nextBtn} >Next</Button>
+                            <Button className="done-button" onClick={this.doneBtn}>Done</Button>
+                        </Col>
                     </Row>
 
                 </Container>
                 <Container className="Completed-MadLib">
-                    <p className="completed-text">
-                    </p>
+                    <Col sm={12}><div className="madlibs-logo">ODDLIBS</div></Col>
+                    <Row className="final-box">
+                        <Col>
+                            <p className="completed-text">
+                            </p>
+                        </Col>
+                    </Row>
                 </Container>
             </React.Fragment>
         );
