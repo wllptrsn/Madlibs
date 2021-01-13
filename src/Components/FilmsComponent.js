@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Container, Card, Col, Row, CardImg, CardImgOverlay, CardTitle, Button } from 'reactstrap';
+import { Container, Card, Col, Row, CardImg, CardImgOverlay, CardTitle, Button, Modal } from 'reactstrap';
 import { Comedy } from '../shared/ComedyTitles';
-import { Drama } from '../shared/DramaTitles'
+import { Drama } from '../shared/DramaTitles';
+import { NavLink } from 'react-router-dom';
+import Share from './ShareComponent';
 //Go to the Single Page Application in the React Course
 class Films extends Component {
     constructor(props) {
@@ -13,6 +15,9 @@ class Films extends Component {
         this.backBtn = this.backBtn.bind(this);
         this.prevBtn = this.prevBtn.bind(this);
         this.doneBtn = this.doneBtn.bind(this);
+        this.quitBtn = this.quitBtn.bind(this);
+        this.showModal = this.showModal.bind(this);
+        this.toggle = this.toggle.bind(this);
         this.state = {
             currentFilm: 0,
             currentPrompt: 0,
@@ -21,9 +26,13 @@ class Films extends Component {
             prevDisabled: true,
             comedy: Comedy,
             drama: Drama,
-            genre: Comedy
+            genre: Comedy,
+            isModalOpen: false
+
         };
     }
+    currentWord = [];
+    words = [];
 
     showFilmCom(x) {
         document.querySelector('.filmScreenDisplay').style.display = "none";
@@ -46,10 +55,10 @@ class Films extends Component {
     enterLetters(x) {
         var madlibsText = document.querySelector('.madlib-text');
 
-        this.state.genre[this.state.currentFilm].currentWord.push(x);
-        madlibsText.innerHTML = this.state.genre[this.state.currentFilm].currentWord.join('');
+        this.currentWord.push(x);
+        madlibsText.innerHTML = this.currentWord.join('');
 
-        if (this.state.genre[this.state.currentFilm].currentWord.length >= 1) {
+        if (this.currentWord.length >= 1) {
             this.setState({
                 nextDisabled: false
             })
@@ -58,35 +67,34 @@ class Films extends Component {
     prevBtn() {
         this.setState({
             nextDisabled: true,
-            currentPrompt: this.state.currentPrompt - 1,
+            currentPrompt: this.state.currentPrompt - 1
 
         })
-        this.state.genre[this.state.currentFilm].currentWord.length = 0;
-        this.state.genre[this.state.currentFilm].words.pop();
-        if (this.state.genre[this.state.currentFilm].words.length <= 1) {
+        this.currentWord.length = 0;
+        this.words.pop();
+        if (this.words.length <= 1) {
             this.setState({
                 prevDisabled: true
             })
         }
     }
     backBtn() {
-        this.state.genre[this.state.currentFilm].currentWord.pop();
-        document.querySelector('.madlib-text').innerHTML = this.state.genre[this.state.currentFilm].currentWord.join('');
+        this.currentWord.pop();
+        document.querySelector('.madlib-text').innerHTML = this.currentWord.join('');
     }
     nextBtn() {
         this.setState({
             nextDisabled: true,
             prevDisabled: false
         })
-        this.state.genre[this.state.currentFilm].words.push(this.state.genre[this.state.currentFilm].currentWord.join(''));
-
+        this.words.push(this.currentWord.join(''));
 
         if (this.state.currentPrompt < this.state.genre[this.state.currentFilm].speech.length - 1) {
             this.setState({
                 currentPrompt: this.state.currentPrompt + 1
             })
 
-            this.state.genre[this.state.currentFilm].currentWord.length = 0;
+            this.currentWord.length = 0;
             document.querySelector('.madlib-text').innerHTML = '';
 
         }
@@ -96,18 +104,42 @@ class Films extends Component {
             })
             document.querySelector('.next-button').style.display = "none";
             document.querySelector('.done-button').style.display = "inline";
-            alert(this.state.genre[this.state.currentFilm].words.join(''));
         }
     }
     doneBtn() {
         var complete = this.state.genre[this.state.currentFilm].complete;
         document.querySelector('.Choice-Icon').style.display = "none";
         document.querySelector('.Completed-MadLib').style.display = "inline-block";
-        for (var i = 0; i < this.state.genre[this.state.currentFilm].words.length; i++) {
+        for (var i = 0; i < this.state.genre[this.state.currentFilm].speech.length - 2; i++) {
 
-            document.querySelector('.completed-text').append(complete[i] + ' ' +this.state.genre[this.state.currentFilm].words[i] + ' ');
+            document.querySelector('.completed-text').append(complete[i] + ' ' + this.words[i] + ' ');
         }
         document.querySelector('.completed-text').append(complete[(complete.length - 1)]);
+    }
+    showModal() {
+        this.setState({
+            isModalOpen: true
+        })
+    }
+    toggle() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+        });
+    }
+    quitBtn() {
+
+        this.setState({
+            currentPrompt: 0
+        })
+        this.words.length = 0;
+        this.currentWord.length = 0;
+        document.querySelector('.Choice-Icon').style.display = "none";
+        document.querySelector('.Completed-MadLib').style.display = "none";
+        document.querySelector('.Completed-MadLib').style.display = "none";
+        document.querySelector('.filmScreenDisplay').style.display = "inline-block";
+        document.querySelector('.madlib-text').innerHTML = this.currentWord.join('');
+        this.toggle();
+
     }
 
     render() {
@@ -208,19 +240,31 @@ class Films extends Component {
                             <Button disabled={this.state.nextDisabled} onClick={this.backBtn} >Back</Button>
                             <Button className="next-button" disabled={this.state.nextDisabled} onClick={this.nextBtn} >Next</Button>
                             <Button className="done-button" onClick={this.doneBtn}>Done</Button>
+                            <Button className="quit-button" onClick={this.showModal}>Quit</Button>
                         </Col>
                     </Row>
 
                 </Container>
                 <Container className="Completed-MadLib">
-                <Col sm={12}><div className="madlibs-logo">ODDLIBS</div></Col>
+                    <Col sm={12}><div className="madlibs-logo">ODDLIBS</div></Col>
                     <Row className="final-box">
                         <Col>
                             <p className="completed-text">
                             </p>
                         </Col>
                     </Row>
+                    <Row className="social-share">
+                        <Col>
+                            <Share />
+                            <NavLink to="/home"><Button className="modalButton">Try an other</Button></NavLink>
+                        </Col>
+                    </Row>
                 </Container>
+                <Modal className="quitModal" isOpen={this.state.isModalOpen}>
+                        Are you sure you want to exit? All of your progress will be lost FOREVER!<br></br>
+                    <Button className="modalButton" onClick={this.quitBtn}>QUIT</Button> <Button className="modalButton" onClick={this.toggle}>CANCEL</Button>
+                    
+                </Modal>
             </React.Fragment>
         );
 
